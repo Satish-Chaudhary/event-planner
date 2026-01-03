@@ -101,7 +101,7 @@
     border: 1px solid rgba(234, 234, 234, 0.05);
     /* Asymmetrical Border Radius as requested: Top-Right and Bottom-Right large */
     border-radius: 100px 10px 100px 100px;
-    padding: 3rem 8rem;
+    padding: 3rem 16rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
