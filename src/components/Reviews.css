@@ -1,0 +1,79 @@
+.reviews-section {
+    padding: 10rem 0;
+    background-color: var(--color-canvas);
+    border-top: 1px solid rgba(234, 234, 234, 0.1);
+    overflow: hidden;
+}
+
+.reviews-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    color: var(--color-accent);
+    margin-bottom: 5rem;
+    text-align: center;
+    padding: 0 2.5rem;
+}
+
+.reviews-ticker {
+    display: flex;
+    white-space: nowrap;
+}
+
+.ticker-inner {
+    display: flex;
+    gap: 2.5rem;
+    animation: ticker-slide 40s linear infinite;
+}
+
+@keyframes ticker-slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.review-card {
+    background-color: rgba(234, 234, 234, 0.03);
+    border: 1px solid rgba(234, 234, 234, 0.05);
+    padding: 3rem;
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.review-card:hover {
+    background-color: rgba(234, 234, 234, 0.06);
+}
+
+.review-text {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    line-height: 1.4;
+    color: var(--color-ink);
+    white-space: normal;
+}
+
+.review-author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.author-name {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-accent);
+}
+
+.author-event {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: rgba(234, 234, 234, 0.4);
+}

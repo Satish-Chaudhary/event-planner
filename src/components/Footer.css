@@ -1,0 +1,109 @@
+.footer-section {
+    background-color: var(--color-accent);
+    padding: 10rem 2.5rem;
+    color: var(--color-canvas);
+}
+
+@media (min-width: 768px) {
+    .footer-section {
+        padding: 10rem 5rem;
+    }
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-title {
+    text-align: center;
+    margin-bottom: 5rem;
+    color: var(--color-canvas);
+}
+
+.footer-form-container {
+    width: 100%;
+    max-width: 42rem;
+    margin-bottom: 5rem;
+}
+
+.footer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.input-wrap {
+    border-bottom: 1px solid rgba(15, 15, 15, 0.2);
+    padding-bottom: 1rem;
+}
+
+.footer-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-canvas);
+}
+
+.footer-input::placeholder {
+    color: rgba(15, 15, 15, 0.5);
+}
+
+.magnetic-submit {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 9999px;
+    border: 1px solid var(--color-canvas);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: none;
+}
+
+.magnetic-submit:hover {
+    background-color: var(--color-canvas);
+    color: var(--color-accent);
+}
+
+.footer-bottom {
+    margin-top: 10rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(15, 15, 15, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .footer-bottom {
+        flex-direction: row;
+    }
+}
+
+.footer-copy,
+.footer-links,
+.designer-credit {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.footer-link:hover {
+    color: var(--color-ink);
+}

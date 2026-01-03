@@ -1,0 +1,14 @@
+.main-container {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+}
+
+.main-container ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-canvas);
+}
+
+.content-wrapper {
+    width: 100%;
+    position: relative;
+}

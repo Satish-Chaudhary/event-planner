@@ -1,0 +1,176 @@
+.team-section-split {
+    padding: 15rem 2.5rem;
+    background-color: var(--color-canvas);
+    border-top: 1px solid rgba(234, 234, 234, 0.1);
+}
+
+@media (min-width: 768px) {
+    .team-section-split {
+        padding: 15rem 5rem;
+    }
+}
+
+.team-header-minimal {
+    margin-bottom: 8rem;
+    text-align: center;
+}
+
+.team-label-line {
+    width: 3rem;
+    height: 1px;
+    background-color: var(--color-accent);
+    margin: 1rem auto 0;
+    opacity: 0.5;
+}
+
+.team-rows-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+.team-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .team-row {
+        flex-direction: row;
+        align-items: stretch;
+        gap: 0;
+    }
+}
+
+/* Left Side: Circle Visual */
+.member-visual {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.image-circle {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid rgba(201, 166, 107, 0.3);
+    padding: 10px;
+    background: var(--color-canvas);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s ease;
+}
+
+@media (min-width: 1200px) {
+    .image-circle {
+        width: 20rem;
+        height: 20rem;
+    }
+}
+
+.circle-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: grayscale(100%) brightness(0.85);
+    transition: transform 1.2s ease, filter 0.8s ease;
+}
+
+.team-row:hover .image-circle {
+    transform: scale(1.02);
+    border-color: var(--color-accent);
+}
+
+.team-row:hover .circle-img {
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.05);
+}
+
+/* Right Side: Bio Card */
+.member-bio-card {
+    flex: 1;
+    position: relative;
+    background-color: rgba(234, 234, 234, 0.02);
+    border: 1px solid rgba(234, 234, 234, 0.05);
+    /* Asymmetrical Border Radius as requested: Top-Right and Bottom-Right large */
+    border-radius: 100px 10px 100px 100px;
+    padding: 3rem 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-left: -15rem;
+    /* Slight overlap for editorial feel */
+    transition: background-color 0.6s ease, border-color 0.6s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+}
+
+@media (max-width: 991px) {
+    .member-bio-card {
+        margin-left: 0;
+        border-radius: 20px 100px 100px 20px;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+.team-row:hover .member-bio-card {
+    background-color: rgba(234, 234, 234, 0.04);
+    border-color: rgba(201, 166, 107, 0.2);
+    transform: translateX(10px);
+}
+
+.bio-id {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    opacity: 0.5;
+}
+
+.bio-name {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--color-ink);
+    margin-bottom: 0.25rem;
+}
+
+.bio-role {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.bio-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgba(234, 234, 234, 0.7);
+    max-width: 32rem;
+    font-weight: 300;
+}
+
+.bio-corner-accent {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-top: 1px solid var(--color-accent);
+    border-right: 1px solid var(--color-accent);
+    opacity: 0.2;
+    transition: opacity 0.5s ease;
+}
+
+.team-row:hover .bio-corner-accent {
+    opacity: 0.8;
+}
+
+/* Consistent layout as requested */
