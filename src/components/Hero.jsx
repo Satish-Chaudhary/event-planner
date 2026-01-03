@@ -7,34 +7,51 @@ const Hero = () => {
     const textRef = useRef(null);
 
     useEffect(() => {
+        const container = containerRef.current;
         const handleMouseMove = (e) => {
             const { clientX, clientY } = e;
-            const xPos = (clientX / window.innerWidth - 0.5) * 40;
-            const yPos = (clientY / window.innerHeight - 0.5) * 40;
+            const rect = container.getBoundingClientRect();
 
-            gsap.to(textRef.current, {
-                x: xPos,
-                y: yPos,
-                duration: 1.5,
-                ease: "power3.out"
-            });
+            // Calculate relative position for the spotlight
+            const x = clientX - rect.left;
+            const y = clientY - rect.top;
+
+            // Set CSS variables for spotlight center
+            container.style.setProperty('--mouse-x', `${x}px`);
+            container.style.setProperty('--mouse-y', `${y}px`);
         };
 
         window.addEventListener('mousemove', handleMouseMove);
         return () => window.removeEventListener('mousemove', handleMouseMove);
     }, []);
 
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
-        <section ref={containerRef} className="hero-section">
+        <section ref={containerRef} className="hero-section" id="home">
             <div className="hero-video-container">
                 <video
                     autoPlay
                     loop
                     muted
                     playsInline
-                    className="hero-video"
+                    className="hero-video video-gray"
                 >
-                    <source src="https://assets.mixkit.co/videos/preview/mixkit-party-crowd-at-a-concert-4024-large.mp4" type="video/mp4" />
+                    <source src="https://www.pexels.com/download/video/2361938/" type="video/mp4" />
+                </video>
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="hero-video video-color"
+                >
+                    <source src="https://www.pexels.com/download/video/2361938/" type="video/mp4" />
                 </video>
             </div>
 
@@ -52,9 +69,10 @@ const Hero = () => {
 
             <div className="hero-dock">
                 <div className="glass-nav">
-                    <button className="nav-btn">Menu</button>
-                    <button className="nav-btn">Contact</button>
-                    <button className="nav-btn">Sound Off</button>
+                    <button onClick={() => scrollToSection('philosophy')} className="nav-btn">Ethos</button>
+                    <button onClick={() => scrollToSection('works')} className="nav-btn">Works</button>
+                    <button onClick={() => scrollToSection('services')} className="nav-btn">Services</button>
+                    <button onClick={() => scrollToSection('contact')} className="nav-btn">Contact</button>
                 </div>
             </div>
         </section>

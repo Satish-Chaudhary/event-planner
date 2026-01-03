@@ -1,0 +1,242 @@
+:root {
+    --portal-bg: #0F0F0F;
+    --portal-sidebar: #161616;
+    --portal-accent: #C9A66B;
+    --portal-ink: #Eaeaea;
+    --portal-border: rgba(234, 234, 234, 0.1);
+    --portal-row-hover: rgba(234, 234, 234, 0.05);
+
+    /* Fonts shared from index.css logic */
+}
+
+.portal-container {
+    display: flex;
+    height: 100vh;
+    background-color: var(--portal-bg);
+    color: var(--portal-ink);
+    font-family: 'Manrope', sans-serif;
+    cursor: auto !important;
+}
+
+.portal-container * {
+    cursor: auto !important;
+}
+
+/* Base Form and Layout Components used across pages */
+.portal-sidebar {
+    width: 260px;
+    background-color: var(--portal-sidebar);
+    border-right: 1px solid var(--portal-border);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+}
+
+.sidebar-header {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--portal-accent);
+    letter-spacing: 0.1em;
+}
+
+.sidebar-header .app-sub-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    opacity: 0.5;
+    margin-top: 0.25rem;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--portal-ink);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.nav-item:hover {
+    background-color: var(--portal-row-hover);
+    opacity: 1;
+}
+
+.nav-item.active {
+    background-color: rgba(201, 166, 107, 0.1);
+    color: var(--portal-accent);
+    opacity: 1;
+}
+
+.sidebar-footer {
+    padding-top: 1rem;
+    border-top: 1px solid var(--portal-border);
+}
+
+.portal-main-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 3rem 4rem;
+}
+
+/* Typography & Headers */
+.page-header {
+    margin-bottom: 3rem;
+}
+
+.page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.page-description {
+    font-size: 0.95rem;
+    opacity: 0.5;
+}
+
+.col-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    opacity: 0.5;
+    font-weight: 700;
+}
+
+/* Tables */
+.portal-table-container {
+    background-color: var(--portal-sidebar);
+    border: 1px solid var(--portal-border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.portal-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.portal-table th {
+    text-align: left;
+    padding: 1.5rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background-color: rgba(234, 234, 234, 0.02);
+    border-bottom: 1px solid var(--portal-border);
+    opacity: 0.6;
+}
+
+.portal-table td {
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--portal-border);
+}
+
+.portal-table tr:hover {
+    background-color: var(--portal-row-hover);
+}
+
+/* Modals */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    background: var(--portal-sidebar);
+    border: 1px solid var(--portal-border);
+    border-radius: 20px;
+    padding: 3rem;
+    width: 100%;
+    max-width: 480px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+    opacity: 0.6;
+}
+
+.portal-input {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--portal-border);
+    border-radius: 10px;
+    color: var(--portal-ink);
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease;
+}
+
+.portal-input:focus {
+    outline: none;
+    border-color: var(--portal-accent);
+}
+
+.portal-input option {
+    background-color: var(--portal-accent);
+    color: var(--portal-bg);
+}
+
+select.portal-input {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23C9A66B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.25rem center;
+    padding-right: 3rem;
+}
+
+/* Global Buttons */
+.portal-btn {
+    padding: 0.85rem 1.75rem;
+    border-radius: 10px;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.btn-primary {
+    background-color: var(--portal-accent);
+    color: var(--portal-bg);
+}
+
+.btn-primary:hover {
+    filter: brightness(1.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(201, 166, 107, 0.15);
+}

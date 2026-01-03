@@ -38,14 +38,14 @@ const SelectedWorks = () => {
     }, []);
 
     return (
-        <section ref={triggerRef} className="works-horizontal-trigger">
-            <div ref={sectionRef} className="works-container">
+        <section ref={triggerRef} id="works" className="works-horizontal-trigger">
+            <div ref={sectionRef} className="works-container" id='works-panel-1'>
                 <div className="works-panel">
                     <h2 className="works-label">Selected Works</h2>
                     <div className="works-grid">
                         {works.slice(0, 2).map((work, i) => (
                             <div key={i} className="work-card">
-                                <img src={work.image} alt={work.title} className="work-img" />
+                                <img src={work.image} alt={work.title} className="work-img" loading="lazy" />
                                 <div className="work-overlay">
                                     <p className="work-category">{work.category}</p>
                                     <h3 className="work-title">{work.title}</h3>
@@ -54,11 +54,12 @@ const SelectedWorks = () => {
                         ))}
                     </div>
                 </div>
-                <div className="works-panel">
+                <div className="works-panel right-panel" id='works-panel-2'>
+                    <h2 className="works-label" style={{ visibility: 'hidden' }}>Spacer</h2>
                     <div className="works-grid">
                         {works.slice(2).map((work, i) => (
                             <div key={i} className="work-card">
-                                <img src={work.image} alt={work.title} className="work-img" />
+                                <img src={work.image} alt={work.title} className="work-img" loading="lazy" />
                                 <div className="work-overlay">
                                     <p className="work-category">{work.category}</p>
                                     <h3 className="work-title">{work.title}</h3>

@@ -47,7 +47,7 @@ const Philosophy = () => {
     const text = "We believe that every event is a canvas, and every detail a brushstroke. Our philosophy is rooted in the pursuit of perfection, where quiet luxury meets kinetic energy. We don't just plan events; we orchestrate experiences that linger in the soul.";
 
     return (
-        <section ref={sectionRef} className="philosophy-section">
+        <section ref={sectionRef} id="philosophy" className="philosophy-section">
             <div className="philosophy-sticky">
                 <h2 className="ethos-label">Our Ethos</h2>
                 <div className="ethos-line" />

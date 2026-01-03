@@ -53,6 +53,8 @@
     transform: scale(1.1);
 }
 
+/* Panel alignment is handled via JSX spacers */
+
 .work-overlay {
     position: absolute;
     inset: 0;

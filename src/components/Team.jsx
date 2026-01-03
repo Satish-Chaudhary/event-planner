@@ -38,7 +38,7 @@ const Team = () => {
                     <div key={i} className="team-row">
                         <div className="member-visual">
                             <div className="image-circle">
-                                <img src={member.image} alt={member.name} className="circle-img" />
+                                <img src={member.image} alt={member.name} className="circle-img" loading="lazy" />
                             </div>
                         </div>
 

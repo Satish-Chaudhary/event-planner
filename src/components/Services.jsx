@@ -27,7 +27,7 @@ const Services = () => {
     const [hovered, setHovered] = useState(null);
 
     return (
-        <section className="services-section">
+        <section id="services" className="services-section">
             <h2 className="services-label">Services</h2>
             <div className="services-list">
                 {services.map((service, index) => (
@@ -65,6 +65,7 @@ const Services = () => {
                                                     src={img + "?auto=format&fit=crop&q=80&w=400&h=250"}
                                                     className="marquee-img"
                                                     alt="Marquee"
+                                                    loading="lazy"
                                                 />
                                             ))}
                                         </div>

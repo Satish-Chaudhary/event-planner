@@ -1,0 +1,62 @@
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.stat-card {
+    background: var(--portal-sidebar);
+    padding: 2rem;
+    border: 1px solid var(--portal-border);
+    border-radius: 16px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.stat-card:hover {
+    border-color: rgba(201, 166, 107, 0.3);
+    transform: translateY(-5px);
+}
+
+.progress-bg {
+    width: 100%;
+    height: 8px;
+    background: rgba(234, 234, 234, 0.05);
+    border-radius: 10px;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--portal-accent);
+    border-radius: 10px;
+}
+
+.dashboard-content-splits {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.recent-activity {
+    background: var(--portal-sidebar);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--portal-border);
+}
+
+.milestone-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(234, 234, 234, 0.02);
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
+    transition: background 0.3s ease;
+}
+
+.milestone-item:hover {
+    background: rgba(234, 234, 234, 0.04);
+}
